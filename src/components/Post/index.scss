@@ -1,11 +1,12 @@
-@import "../common.scss";
+@import '../common.scss';
 
 .post {
-  padding: 10px 12px;
+  padding: 10px 12px 2px;
   border: 1px solid $gray;
   border-radius: 10px;
   background-color: white;
   font-size: 0.9rem;
+  margin-bottom: 8px;
   //   color: $dark-gray;
 
   .header {

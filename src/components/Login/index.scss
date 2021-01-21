@@ -1,0 +1,48 @@
+@import '../common.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+  //   padding-top: 100px;
+  .img {
+    width: 350px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  form {
+    margin-top: -10px;
+    width: 350px;
+  }
+
+  input {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 15px 10px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid $dark-gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 15px 10px;
+    color: white;
+    font-weight: 500;
+    background-color: #0080b4;
+    border-radius: 5px;
+    border: none;
+
+    &:hover {
+      background-color: #006c97;
+    }
+  }
+}

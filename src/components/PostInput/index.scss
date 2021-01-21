@@ -1,5 +1,5 @@
 $gray: rgb(218, 218, 218);
-@import "../common.scss";
+@import '../common.scss';
 
 .post-input {
   width: 100%;
@@ -21,6 +21,10 @@ $gray: rgb(218, 218, 218);
       input {
         background-color: $light-gray;
       }
+    }
+
+    form {
+      width: 100%;
     }
 
     input {

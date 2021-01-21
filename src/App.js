@@ -1,18 +1,20 @@
-import "./App.scss";
-import Header from "./components/Header";
-import LeftBar from "./components/LeftBar";
-import RightBar from "./components/RightBar";
-import Core from "./components/Core";
+import './App.scss';
+import Header from './components/Header';
+import LeftBar from './components/LeftBar';
+import RightBar from './components/RightBar';
+import Core from './components/Core';
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      <main>
+      {/* <main>
         <LeftBar />
         <Core />
         <RightBar />
-      </main>
+      </main> */}
+      <Login />
     </div>
   );
 }
