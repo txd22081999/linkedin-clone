@@ -1,0 +1,17 @@
+$gray: rgb(218, 218, 218);
+$color-gray: rgb(128, 128, 128);
+$line-gray: rgb(226, 226, 226);
+$text-blue: rgb(35, 122, 252);
+$dark-gray: rgb(105, 105, 105);
+$light-gray: rgb(235, 235, 235);
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

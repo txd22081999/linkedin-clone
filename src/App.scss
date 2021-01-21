@@ -24,3 +24,13 @@ input {
   border: none;
   outline: none;
 }
+
+main {
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 0.9fr 550px 1.1fr;
+  grid-template-rows: auto;
+  grid-gap: 25px;
+}
