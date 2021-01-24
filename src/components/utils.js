@@ -84,4 +84,6 @@ const handleClickOutside = (wrapperRef, event, callback) => {
   }
 };
 
-export { getTime, handleClickOutside };
+const defaultImg = 'https://i.stack.imgur.com/l60Hf.png';
+
+export { getTime, handleClickOutside, defaultImg };

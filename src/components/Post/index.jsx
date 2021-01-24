@@ -3,10 +3,10 @@ import React, { forwardRef } from 'react';
 import { Public, MoreHoriz, ThumbUp, Comment, Send } from '@material-ui/icons';
 
 import './index.scss';
-import { getTime } from '../utils';
+import { getTime, defaultImg } from '../utils';
 
-const companyImg =
-  'https://www.designhill.com/resize_img.php?atyp=page_file&pth=ft_ca_ct||117||contestfile_1&flp=1554116576-13511971185ca1efe0bcd5a0-26602492.jpg';
+// const companyImg =
+//   'https://www.designhill.com/resize_img.php?atyp=page_file&pth=ft_ca_ct||117||contestfile_1&flp=1554116576-13511971185ca1efe0bcd5a0-26602492.jpg';
 
 const Share = () => (
   <svg
@@ -38,11 +38,7 @@ const Post = forwardRef((props, ref) => {
     <div ref={ref} className='post'>
       <div className='header'>
         <div className='avatar'>
-          <img
-            // src={companyImg}
-            src={photoUrl}
-            alt='post-avatar'
-          />
+          <img src={photoUrl || defaultImg} alt='post-avatar' />
         </div>
 
         <div className='info'>

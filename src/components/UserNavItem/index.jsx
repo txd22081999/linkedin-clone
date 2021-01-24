@@ -2,13 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ArrowDropDown } from '@material-ui/icons';
 
 import './index.scss';
-import { handleClickOutside } from '../utils';
+import { handleClickOutside, defaultImg } from '../utils';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../features/userSlice';
 import { auth } from '../../firebase';
 
-const defaultAvatarSrc =
-  'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
+const defaultAvatarSrc = defaultImg;
 
 const DropDown = (props) => {
   const { wrapperRef } = props;

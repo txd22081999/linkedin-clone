@@ -3,9 +3,9 @@ import { AddAPhoto, Bookmark } from '@material-ui/icons';
 import './index.scss';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/userSlice';
+import { defaultImg } from '../utils';
 
-const mockAvatarImg =
-  'https://businesstech.co.za/news/wp-content/uploads/2015/03/Male-ideal-beauty.jpg';
+const mockAvatarImg = defaultImg;
 const mockBackgroundImg =
   'https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg';
 
