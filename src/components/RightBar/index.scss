@@ -1,3 +1,63 @@
+@import '../common.scss';
+
 .right-bar {
   //   flex: 1;
+  .news {
+    padding: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid $line-gray;
+
+    .news-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding: 0 10px;
+
+      h5 {
+        color: rgb(105, 105, 105);
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+
+    ul {
+      li {
+        padding: 4px 10px;
+        display: flex;
+        margin-bottom: 6px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $light-gray;
+        }
+
+        .dot {
+          margin-top: 7px;
+          display: inline-block;
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: teal;
+          margin-right: 8px;
+        }
+
+        .news-text {
+          // @extend .vertical-center;
+
+          .news-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          .news-content {
+            color: $color-gray;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
 }

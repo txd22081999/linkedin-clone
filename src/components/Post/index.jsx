@@ -66,6 +66,11 @@ const Post = forwardRef((props, ref) => {
 
       <div className='content'>{content}</div>
 
+      <div className='action-count'>
+        <span>30 Likes</span>
+        <span>5 Comments</span>
+      </div>
+
       <div className='post-divider'></div>
 
       <div className='social-action'>

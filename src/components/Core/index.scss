@@ -1,4 +1,22 @@
-@import "../common.scss";
+@import '../common.scss';
+
+body {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(197, 197, 197);
+    border-radius: 10px;
+  }
+}
+
 .core {
   //   min-width: 500px;
 

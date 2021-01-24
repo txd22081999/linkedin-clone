@@ -5,6 +5,13 @@
   padding-bottom: 0;
   display: flex;
 
+  &.nav-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+
   .left {
     display: flex;
     align-items: center;
@@ -53,6 +60,23 @@
       width: 60%;
       display: flex;
       justify-content: space-around;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .nav {
+      // display: none !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .left {
+      flex-basis: 100% !important;
+    }
+
+    .right {
+      display: none !important;
     }
   }
 }
