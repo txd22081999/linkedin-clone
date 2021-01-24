@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Search,
   Home,
   SupervisorAccount,
   BusinessCenter,
   Sms,
-  Notifications,
-} from "@material-ui/icons";
+  Notifications
+} from '@material-ui/icons';
 
-import Logo from "../../assets/linkedin-logo.png";
-import "./index.scss";
-import NavItem from "../NavItem";
-import UserNavItem from "../UserNavItem";
+import Logo from '../../assets/linkedin-logo.png';
+import './index.scss';
+import NavItem from '../NavItem';
+import UserNavItem from '../UserNavItem';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
 
 const Header = () => {
   const [active, setActive] = useState([true, false, false, false, false]);
+  const user = useSelector(selectUser);
+  console.log(user);
+  // const { photoUrl = '' } = user;
 
   const handleClick = (index) => {
     let newActive = [false, false, false, false, false];
@@ -23,24 +28,24 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
-      <div className="left">
-        <img src={Logo} alt="logo" />
+    <div className='header'>
+      <div className='left'>
+        <img src={Logo} alt='logo' />
 
-        <div className="search">
+        <div className='search'>
           <Search />
-          <input type="text" placeholder="Search" />
+          <input type='text' placeholder='Search' />
         </div>
       </div>
 
-      <div className="right">
+      <div className='right'>
         <nav>
-          <ul className="nav">
+          <ul className='nav'>
             <li>
               <NavItem
                 active={active[0]}
                 Icon={<Home />}
-                name="home"
+                name='home'
                 onClick={() => handleClick(0)}
               />
             </li>
@@ -48,7 +53,7 @@ const Header = () => {
               <NavItem
                 active={active[1]}
                 Icon={<SupervisorAccount />}
-                name="my network"
+                name='my network'
                 onClick={() => handleClick(1)}
               />
             </li>
@@ -56,7 +61,7 @@ const Header = () => {
               <NavItem
                 active={active[2]}
                 Icon={<BusinessCenter />}
-                name="jobs"
+                name='jobs'
                 onClick={() => handleClick(2)}
               />
             </li>
@@ -64,7 +69,7 @@ const Header = () => {
               <NavItem
                 active={active[3]}
                 Icon={<Sms />}
-                name="messaging"
+                name='messaging'
                 onClick={() => handleClick(3)}
                 notif={2}
               />
@@ -73,13 +78,13 @@ const Header = () => {
               <NavItem
                 active={active[4]}
                 Icon={<Notifications />}
-                name="notifications"
+                name='notifications'
                 onClick={() => handleClick(4)}
                 notif={5}
               />
             </li>
             <li>
-              <UserNavItem />
+              <UserNavItem photoUrl={user && user.photoUrl} />
             </li>
           </ul>
         </nav>

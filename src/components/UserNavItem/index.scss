@@ -1,3 +1,5 @@
+@import '../common.scss';
+
 .user-nav {
   display: flex;
   flex-direction: column;
@@ -16,10 +18,12 @@
   img {
     width: 27px;
     height: 27px;
+    object-fit: cover;
     border-radius: 50%;
   }
 
   .content {
+    position: relative;
     font-size: 12px;
     text-transform: capitalize;
     color: gray;
@@ -27,5 +31,61 @@
     display: flex;
     align-items: center;
     // justify-content: space-between;
+  }
+
+  .user-dropdown {
+    font-size: 13px;
+    position: absolute;
+    top: 35px;
+    right: -20px;
+    min-width: 200px;
+    background-color: white;
+    z-index: 99;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.212);
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid rgb(0, 0, 218);
+      color: rgb(0, 0, 218);
+      border-radius: 25px;
+      padding: 3px 0;
+      font-weight: 600;
+      transition: 0.2s ease-in;
+      // display: none;
+
+      &:hover {
+        background-color: rgb(206, 206, 243);
+      }
+    }
+
+    li {
+      margin: 10px 0;
+
+      &.user-group {
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .divider {
+      width: 120%;
+      margin-left: -10px;
+      // margin-left: -10px;
+      height: 1px;
+      background-color: $light-gray;
+    }
   }
 }

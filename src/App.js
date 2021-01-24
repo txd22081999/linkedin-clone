@@ -1,27 +1,53 @@
-import "./App.scss";
-import Header from "./components/Header";
-import LeftBar from "./components/LeftBar";
-import RightBar from "./components/RightBar";
-import Core from "./components/Core";
-import Login from "./components/Login";
+import { useEffect } from 'react';
+import Header from './components/Header';
+import LeftBar from './components/LeftBar';
+import RightBar from './components/RightBar';
+import Core from './components/Core';
+import Login from './components/Login';
 
-import { selectUser } from "./features/userSlice";
-import { useSelector } from "react-redux";
+import { login, logout, selectUser } from './features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import './App.scss';
+import { auth } from './firebase';
 
 function App() {
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
-  console.log(user);
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        // logged in
+        console.log(userAuth);
+        const { uid, email, displayName, photoURL } = userAuth;
+        const userInfo = {
+          uid,
+          email,
+          displayName,
+          photoUrl: photoURL
+        };
+
+        dispatch(login(userInfo));
+      } else {
+        // logged out
+        dispatch(logout());
+      }
+    });
+  }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      {/* <main>
-        <LeftBar />
-        <Core />
-        <RightBar />
-      </main> */}
-      <Login />
+
+      {user.user ? (
+        <main>
+          <LeftBar />
+          <Core />
+          <RightBar />
+        </main>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }

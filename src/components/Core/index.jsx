@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
+import FlipMove from 'react-flip-move';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
 import { db } from '../../firebase';
 
 import Post from '../Post';
@@ -8,6 +11,7 @@ import './index.scss';
 
 const Core = () => {
   const [posts, setPosts] = useState([]);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     const getAllPosts = async () => {
@@ -58,12 +62,17 @@ const Core = () => {
 
   return (
     <div className='core'>
-      <PostInput addPost={addPost} />
+      <PostInput addPost={addPost} user={user} />
       <div className='divider' />
-      {posts.map((post) => {
-        const { content = '', id = 0 } = post;
-        return <Post key={id} post={post.data} />;
-      })}
+      <FlipMove>
+        {posts.map((post) => {
+          const { content = '', id = 0 } = post;
+          return <Post key={id} post={post.data} />;
+        })}
+        {/* <li key={1}>1</li>
+        <li key={2}>2</li>
+        <li key={3}>3</li> */}
+      </FlipMove>
     </div>
   );
 };

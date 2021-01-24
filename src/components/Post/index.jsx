@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { Public, MoreHoriz, ThumbUp, Comment, Send } from '@material-ui/icons';
 
@@ -23,7 +23,7 @@ const Share = () => (
   </svg>
 );
 
-const Post = (props) => {
+const Post = forwardRef((props, ref) => {
   const { post = {} } = props;
   const {
     id = 0,
@@ -35,7 +35,7 @@ const Post = (props) => {
   } = post;
 
   return (
-    <div className='post'>
+    <div ref={ref} className='post'>
       <div className='header'>
         <div className='avatar'>
           <img
@@ -91,6 +91,6 @@ const Post = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default Post;

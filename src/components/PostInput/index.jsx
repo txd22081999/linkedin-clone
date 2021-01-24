@@ -14,7 +14,7 @@ import firebase from 'firebase';
 const PostInput = (props) => {
   const [input, setInput] = useState('');
 
-  const { addPost = () => {} } = props;
+  const { addPost = () => {}, user = {} } = props;
 
   useEffect(() => {
     // db.collection("post").onSnapshot(snapshot => {
@@ -39,14 +39,16 @@ const PostInput = (props) => {
     const mockPhotoUrl =
       'https://www.designhill.com/resize_img.php?atyp=page_file&pth=ft_ca_ct||117||contestfile_1&flp=1554116576-13511971185ca1efe0bcd5a0-26602492.jpg';
 
+    const { displayName = '', photoUrl = '' } = user;
     const newPost = {
-      name: 'John Doe',
+      name: displayName,
       content: input,
       description: 'desc',
-      photoUrl: mockPhotoUrl,
+      photoUrl,
       timeStamp: firebase.firestore.FieldValue.serverTimestamp()
     };
-    // addPost(newPost);
+    console.log(newPost);
+
     sendPost(newPost);
     setInput('');
   };

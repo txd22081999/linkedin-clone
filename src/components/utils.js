@@ -76,4 +76,12 @@ const getTime = (timeStamp) => {
   //   return Math.floor(diffSec) + 's';
 };
 
-export { getTime };
+const handleClickOutside = (wrapperRef, event, callback) => {
+  // console.log(wrapperRef.current);
+  // console.log(event.target);
+  if (wrapperRef && !wrapperRef.current.contains(event.target)) {
+    callback();
+  }
+};
+
+export { getTime, handleClickOutside };

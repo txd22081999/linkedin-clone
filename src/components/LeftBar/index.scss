@@ -1,4 +1,4 @@
-@import "../common.scss";
+@import '../common.scss';
 
 .left-bar {
   //   flex: 1;
@@ -32,8 +32,9 @@
       img {
         border: 2px solid white;
         border-radius: 50%;
-        object-fit: contain;
-        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -55,7 +56,7 @@
     }
 
     .divider {
-      content: "";
+      content: '';
       margin: 12px 0;
       display: block;
       width: 100%;
@@ -69,8 +70,8 @@
       grid-template-columns: 2;
       grid-template-rows: 2;
       grid-template-areas:
-        "t n"
-        "t n";
+        't n'
+        't n';
       font-size: 0.85rem;
       padding: 0 10px;
 

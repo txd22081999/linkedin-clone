@@ -1,5 +1,7 @@
 @import '../common.scss';
 
+$blue: #0080b4;
+
 .login {
   display: flex;
   flex-direction: column;
@@ -37,12 +39,23 @@
     padding: 15px 10px;
     color: white;
     font-weight: 500;
-    background-color: #0080b4;
+    background-color: $blue;
     border-radius: 5px;
     border: none;
 
     &:hover {
       background-color: #006c97;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+
+    span {
+      color: $blue;
+      cursor: pointer;
     }
   }
 }
